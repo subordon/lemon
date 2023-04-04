@@ -1,13 +1,15 @@
 ---
-const today = new Date();
+import Container from "./container.astro";
+import Themeswitch from "./themeswitch.astro";
 ---
 
-<footer>
-	&copy; {today.getFullYear()} YOUR NAME HERE. All rights reserved.
-</footer>
-<style>
-	footer {
-		padding: 25px;
-		text-align: center;
-	}
-</style>
+<Container class="mt-10 border-t border-gray-100 dark:border-gray-800">
+  <footer class="flex flex-col items-center">
+    <div class="text-sm text-center">
+      Copyright © {new Date().getFullYear()} All rights reserved.
+    </div>
+    <div class="flex items-center justify-between mt-2">
+      <Themeswitch />
+    </div>
+  </footer>
+</Container>
