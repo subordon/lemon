@@ -20,9 +20,7 @@ export default defineConfig({
   },
   integrations: [
     tailwind(),
-    image({
-      serviceEntryPoint: "@astrojs/image/sharp",
-    }),
+    image(),
     mdx(),
     sitemap(),
   ],
