@@ -18,8 +18,8 @@ const { title, desc, ogimage = "/opengraph.jpg" } = Astro.props;
 const resolvedOGImage = checkImageUrl(ogimage, Astro.site);
 
 const makeTitle = title
-  ? title + " | " + "astro"
-  : "a astro blog";
+  ? title + " | "
+  : "keep growing";
 ---
 
 <!DOCTYPE html>
@@ -32,13 +32,13 @@ const makeTitle = title
     <SEO
       title={makeTitle}
       description={desc ||
-        "a astro blog"}
+        "keep growing"}
       canonical={canonicalURL}
       openGraph={{
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `a astro blog`,
+          title: `keep growing`,
           image: resolvedOGImage,
         },
         image: {

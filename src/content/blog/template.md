@@ -12,8 +12,5 @@ author: "mario-sanchez"
 tags: [tag1, tag2, tag3]
 ---
 
-Your content here
+“What’s the meaning of life?” is a cliche philosophical question, but it touches on something fundamental about how humans relate to the world around them. People want to know that there’s significance to their lives, but not necessarily in any grandiose sense. Most of us just want to feel that there’s value in getting up and being active each day. We search for signs that our existence is a net good in the world, even if only on a minuscule scale in the grander scheme of the universe.
 
-## Write Headings
-
-Some content with [links](#) and more...
