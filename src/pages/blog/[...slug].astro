@@ -68,24 +68,23 @@ const category = categories.find(
     </div>
   </Container>
 
-  <div
-    class="relative z-0 max-w-screen-lg mx-auto overflow-hidden lg:rounded-lg aspect-video">
-    {
-      post.data.image && (
+  {
+    post.data.image && (
+      <div class="relative z-0 max-w-screen-lg mx-auto overflow-hidden lg:rounded-lg aspect-video">
         <Picture
           src={post.data.image}
           widths={[200, 400, 800]}
           sizes="(max-width: 640px) 90vw, 480px"
           aspectRatio="16:9"
           width={1024}
-          heignt={576}
+          height={576}
           alt="Thumbnail"
           loading="eager"
           class="w-full"
         />
-      )
-    }
-  </div>
+      </div>
+    )
+  }
 
   <Container>
     <article class="max-w-screen-md mx-auto">
