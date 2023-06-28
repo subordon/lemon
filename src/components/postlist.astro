@@ -18,14 +18,14 @@ const category = categories.find(
 ---
 
 <div class="cursor-pointer group">
-  <div
-    class={cx(
-      "relative overflow-hidden transition-all bg-gray-100 rounded-md dark:bg-gray-800   hover:scale-105",
-      aspect === "landscape" ? "aspect-video" : "aspect-square"
-    )}>
-    <a href={"/blog/" + post.slug}>
-      {
-        post.data.image ? (
+  {
+    post.data.image && (
+      <div
+        class={cx(
+          "relative overflow-hidden transition-all bg-gray-100 rounded-md dark:bg-gray-800   hover:scale-105",
+          aspect === "landscape" ? "aspect-video" : "aspect-square"
+        )}>
+        <a href={"/blog/" + post.slug}>
           <Picture
             src={post.data.image}
             widths={[200, 400, 800]}
@@ -35,21 +35,11 @@ const category = categories.find(
             loading={preloadImage ? "eager" : "lazy"}
             class="w-full h-full rounded-md"
           />
-        ) : (
-          <span class="absolute w-16 h-16 text-gray-200 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-            <Icon
-              class="w-4 h-4 text-black"
-              name="heroicons-outline:photograph"
-            />
-          </span>
-        )
-      }
-    </a>
-  </div>
+        </a>
+      </div>
+    )
+  }
 
-  <a href="#">
-    <Label theme={category.color}>{category.title}</Label>
-  </a>
   <h2
     class="mt-2 text-lg font-semibold tracking-normal text-brand-primary dark:text-white">
     <a href={"/blog/" + post.slug}>
@@ -72,9 +62,11 @@ const category = categories.find(
 
   <div
     class="flex items-center mt-3 space-x-3 text-gray-500 dark:text-gray-400">
-    <div class="flex items-center gap-3">
-    <time class="text-sm" datetime={post.data.publishDate}>
-      {getFormattedDate(post.data.publishDate)}
-    </time>
+    <div class="flex items-center justify-between gap-3">
+      <time class="text-sm" datetime={post.data.publishDate}>
+        {getFormattedDate(post.data.publishDate)}
+      </time>
+        <Label theme={category.color}>{category.title}</Label>
+    </div>
   </div>
 </div>
