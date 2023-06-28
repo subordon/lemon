@@ -2,6 +2,7 @@
 title: "探索Vue3 Composition API"
 excerpt: "Some description"
 publishDate: "2023-04-07"
+image: '/src/assets/hero.png'
 # image: "https://images.unsplash.com/photo-1501747315-124a0eaca060?auto=format&fit=crop&w=987&h=987"
 category: "technology"
 author: "mrayi"

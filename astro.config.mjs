@@ -11,11 +11,11 @@ import { remarkReadingTime } from "./src/utils/all";
 export default defineConfig({
   site: "https://lemon-coral.vercel.app",
   experimental: {
-    contentCollections: true,
+    assets: true,
   },
   markdown: {
     remarkPlugins: [remarkReadingTime],
-    rehypePlugins: ["rehype-plugin-image-native-lazy-loading"],
+    rehypePlugins: [],
     extendDefaultPlugins: true,
   },
   integrations: [
