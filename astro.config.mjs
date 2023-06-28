@@ -11,7 +11,7 @@ import { remarkReadingTime } from "./src/utils/all";
 export default defineConfig({
   site: "https://lemon-coral.vercel.app",
   experimental: {
-    assets: true,
+    // assets: true,
   },
   markdown: {
     remarkPlugins: [remarkReadingTime],

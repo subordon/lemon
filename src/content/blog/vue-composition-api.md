@@ -2,13 +2,11 @@
 title: "探索Vue3 Composition API"
 excerpt: "Some description"
 publishDate: "2023-04-07"
-image: '/src/assets/hero.png'
 # image: "https://images.unsplash.com/photo-1501747315-124a0eaca060?auto=format&fit=crop&w=987&h=987"
 category: "technology"
 author: "mrayi"
 tags: [vue3, 源码]
 ---
-
 ### 什么是组合式 API
 
 组合式 API (Composition API) 是一系列 API 的集合，使我们可以使用函数而不是声明选项的方式书写 Vue 组件。
