@@ -4,7 +4,7 @@ import Navbar from "@components/navbar.astro";
 // import "@fontsource/inter/variable.css";
 import { checkImageUrl } from "@utils/all";
 import { SEO } from "astro-seo";
-
+import { ViewTransitions } from "astro:transitions";
 export interface Props {
   title?: string;
   desc?: string;
@@ -17,22 +17,20 @@ const { title, desc, ogimage = "/opengraph.jpg" } = Astro.props;
 
 const resolvedOGImage = checkImageUrl(ogimage, Astro.site);
 
-const makeTitle = title
-  ? title + " | "
-  : "keep growing";
+const makeTitle = title ? title + " | " : "keep growing";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <ViewTransitions />
     <SEO
       title={makeTitle}
-      description={desc ||
-        "keep growing"}
+      description={desc || "keep growing"}
       canonical={canonicalURL}
       openGraph={{
         basic: {
@@ -48,9 +46,13 @@ const makeTitle = title
     />
   </head>
   <body class="font-wenkai">
-    <Navbar />
-    <slot />
-    <Footer />
+    <div class="min-h-screen flex flex-col">
+      <Navbar />
+      <div class="flex-1">
+        <slot />
+      </div>
+      <Footer class="flex-shrink-0 mt-8" />
+    </div>
     <style is:global>
       /* Improve Page speed */
       /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
@@ -58,22 +60,22 @@ const makeTitle = title
         content-visibility: auto;
       }
       @font-face {
-        font-family: 'wenkai-light';
-        src: url('/fonts/LXGWWenKai-Light.ttf') format('ttf');
+        font-family: "wenkai-light";
+        src: url("/fonts/LXGWWenKai-Light.ttf") format("ttf");
         font-weight: normal;
         font-style: normal;
         font-display: swap;
       }
       @font-face {
-        font-family: 'wenkai-mono-light';
-        src: url('/fonts/LXGWWenKaiMono-Light.ttf') format('ttf');
+        font-family: "wenkai-mono-light";
+        src: url("/fonts/LXGWWenKaiMono-Light.ttf") format("ttf");
         font-weight: normal;
         font-style: normal;
         font-display: swap;
       }
       @font-face {
-        font-family: 'wenkai-mono-blod';
-        src: url('/fonts/LXGWWenKaiMono-Light.ttf') format('ttf');
+        font-family: "wenkai-mono-blod";
+        src: url("/fonts/LXGWWenKaiMono-Light.ttf") format("ttf");
         font-weight: normal;
         font-style: normal;
         font-display: swap;
