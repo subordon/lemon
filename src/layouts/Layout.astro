@@ -4,7 +4,7 @@ import Navbar from "@components/navbar.astro";
 // import "@fontsource/inter/variable.css";
 import { checkImageUrl } from "@utils/all";
 import { SEO } from "astro-seo";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter   } from "astro:transitions";
 export interface Props {
   title?: string;
   desc?: string;
@@ -27,7 +27,7 @@ const makeTitle = title ? title + " | " : "keep growing";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <ViewTransitions />
+    <ClientRouter  />
     <SEO
       title={makeTitle}
       description={desc || "keep growing"}
